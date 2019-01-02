@@ -1,0 +1,52 @@
+<!-- feederfoxnew/home/templates/publishersignup.html-->
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+ <!--header starts here -->
+<body style="background-color:#f2f3f5;">
+
+
+<br><br>
+
+<!-- Login section starts  here -->
+<div class="container">
+
+  <section class="login-block">
+    <div class="login-container">
+      <div class="row">
+        <div class="col-md-5 login-sec">
+          <h2 class="text-center">Login Now</h2>
+          <p>Please Signup <a href="{% url 'signup' %} "> here </a></p>
+             <br><br>
+             <p style="FONT-SIZE:25px; COLOR:black; LINE-HEIGHT:30px;">
+                  {% if messages %}
+                                    <ul class="messages">
+                                        {% for message in messages %}
+                                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                    {% endif %}
+          <form class="login-form login" method="POST" action="">
+              {% csrf_token %}
+              <input type="hidden" name="next" value="{{ next }}">
+            {{ form }}
+
+            <div class="form-check">
+              <button type="submit" class="btn btn-login">Submit</button>
+              <a class="button secondaryAction" href=""> Forgot Password</a>
+            </div>
+      
+          </form>
+        </div>
+        
+    </div>
+  </section>
+</div>
+<!-- Login section  ends here -->
+
+
+
+</body>
+</html>
