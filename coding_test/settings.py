@@ -133,3 +133,10 @@ LOGIN_REDIRECT_URL = '/'
 LOGOUT_URL = '/'
 
 SITE_ID = 1
+
+# Add these new lines
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
