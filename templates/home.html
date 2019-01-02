@@ -1,3 +1,7 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block pagecontent %}
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,10 +15,11 @@ welcome {{ request.user.username }}
 {% else %}
 Please Login
 
-<a href="{% url 'login' %} "><button>Login</button></a>
-<a href="{% url 'signup' %} "><button>Signup</button></a>
+<a href="{% url 'login' %} " class="btn btn-primary">Login</a>
+<a href="{% url 'signup' %} " class="btn btn-primary">Signup</a>
 {% endif %}
-<a href="{% url 'addzira' %} "><button>Add Zira</button></a>
-<a href="{% url 'viewzira' %} "><button>View Zira</button></a>
+<a href="{% url 'addzira' %} " class="btn btn-primary">Add Zira</a>
+<a href="{% url 'viewzira' %} " class="btn btn-primary">View Zira</a>
 </body>
 </html>
+{% endblock %}
